@@ -8,7 +8,7 @@
 
 ### To pack for deploy:
 1. run `npm run bundle`
-2. find your files in`dist` folder
+2. find your files in `dist` folder
 
 note! 
 if you like to use this for production please note that
