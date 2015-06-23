@@ -11,6 +11,9 @@
 2. find your files in`dist` folder
 
 note! 
+if you like to use this for production please note that
+currently webpack bundle your source code with vendor code.
+it will be fixed in the future.
 
 
 
