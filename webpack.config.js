@@ -2,7 +2,7 @@ module.exports = {
 
   // set the context (optional)
   context: __dirname + '/src',
-  entry: './app/app.js',
+  entry: 'index.js',
 
   // enable loading modules relatively (without the ../../ prefix)
   resolve: {
@@ -12,19 +12,22 @@ module.exports = {
   module: {
     loaders: [
 
-      // load and compile javascript and less
+      // load and compile javascript
       { test: /\.js$/, exclude: /node_modules/, loader:"babel" },
-      { test: /\.less$/, loader: "style!css!less"},
 
-      // support Jsob importing
+      // load css and process less
+      { test: /\.css$/, loader: "style!css"},
+
+      // load JSON files and HTML
       { test: /\.json$/, loader: "json" },
-
-      // load raw html files
       { test: /\.html$/, exclude: /node_modules/, loader:"raw" },
 
-      // load fonts and images
+      // load fonts(inline base64 URLs for <=8k)
       { test: /\.(ttf|eot|svg|otf)$/, loader: "file" },
-      { test: /\.woff(2)?$/, loader: "url?limit=10000&minetype=application/font-woff"}
+      { test: /\.woff(2)?$/, loader: "url?limit=8192&minetype=application/font-woff"},
+
+      // load images (inline base64 URLs for <=8k images)
+      {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
     ]
   },
 
