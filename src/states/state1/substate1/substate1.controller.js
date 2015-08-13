@@ -1,8 +1,8 @@
 /**
  * Created by idannaim on 8/11/15.
  */
-export class BuildersController {
+export class Substate1Controller {
     constructor(){
-    alert ('idan')
+   this.title='subState1'
     }
 }

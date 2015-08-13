@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
 
-<body ng-controller="AppController as App">
+    <body ng-controller="AppController as App">
 
-  <h1 ng-bind="App.title"></h1>
-  <hr/>
+        <h1 ng-bind="App.title"></h1>
+        <hr/>
+        <div class="idan"> idan</div>
+        <pre ng-bind="App.info | json "></pre>
 
-  <pre ng-bind="App.info | json "></pre>
-
-  <hr/>
-  version <span ng-bind="App.version"></span>
-
-  <!-- served from webpack-dev-server -->
-  <script src="bundle.js"></script>
-</body>
+        <hr/>
+        version <span ng-bind="App.version"></span>
+        <a ui-sref="state1.substate1" href="">Link</a>
+        <ui-view></ui-view>
+        <!-- served from webpack-dev-server -->
+        <script src="bundle.js"></script>
+    </body>
 </html>

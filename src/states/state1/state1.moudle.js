@@ -1,25 +1,25 @@
 /**
  * Created by idannaim on 8/11/15.
  */
-
-import Builders   from './builders/builders.moudle';
-
-
-import {SuppliersController} from './supplier.controller';
+//substates
+import Substate1   from './substate1/substate1.moudle';
+import Substate2   from './substate2/substate2.moudle';
+//current controller
+import {State1Controller} from './state1.controller';
 
 function adminConfig($stateProvider) {
     $stateProvider
-        .state('suppliers', {
-            url: '/suppliers',
-            parent: 'app-layout',
-            templateUrl: "states/suppliers/suppliers.html",
-            controller: 'SuppliersController as Supplier'
+        .state('state1', {
+            url: '/state1',
+            templateUrl: "states/State1/State1.html",
+            controller: 'State1Controller as State1'
         })
 }
 
-export default angular.module('suppliers.module', [
+export default angular.module('state1.module', [
     'ui.router',
-    Builders.name
+    Substate1.name,
+    Substate2.name
 ])
     .config(adminConfig)
-    .controller('SuppliersController', SuppliersController)
+    .controller('State1Controller', State1Controller)
